@@ -15,8 +15,7 @@ for i in range(PublicImg.size[0]):
         rgb = [0, 0, 0]
         for k in range(3):
             rgb[k] = (PublicPixels[i, j][k] & ((1 << bits_total) - 2**bits_for_secret)) + (SecretPixels[i, j][k] >> (bits_total - bits_for_secret))
-        rgb = tuple(rgb)
-        PublicPixels[i, j] = rgb
+        PublicPixels[i, j] = tuple(rgb)
 PublicImg.show()    # Displays the combined image
 
 
